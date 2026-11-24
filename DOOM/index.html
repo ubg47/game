@@ -24,24 +24,24 @@
   <meta property="og:description" content="Play in the DOOM in browser." />
   <meta property="og:type" content="game" />
   <meta property="og:url" content="https://js-dos.com/DOOM/" />
-  <meta property="og:image" content="https://js-dos.com/cdn/DOOM.png" />
+  <meta property="og:image" content="cdn/DOOM.png" />
 
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/hyde.css">
-  <link rel="stylesheet" href="/public/css/app.css">
+  <link rel="stylesheet" href="public/css/poole.css">
+  <link rel="stylesheet" href="public/css/syntax.css">
+  <link rel="stylesheet" href="public/css/hyde.css">
+  <link rel="stylesheet" href="public/css/app.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
-                                 <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="public/favicon.ico">
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-  <script type="text/javascript" src="https://js-dos.com/cdn/js-dos-api.js"></script>
+  <script type="text/javascript" src="cdn/js-dos-api.js"></script>
 
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -284,7 +284,7 @@
 
 <style>
     #DOOM > .dosbox-container { width: 640px; height: 400px; }
-    #DOOM > .dosbox-container > .dosbox-overlay { background: url("https://js-dos.com/cdn/DOOM.png"); }
+    #DOOM > .dosbox-container > .dosbox-overlay { background: url("cdn/DOOM.png"); }
     #DOOM > .dosbox-container > .dosbox-overlay > .dosbox-start {
         border-radius: 17px 17px 17px 17px;
         -moz-border-radius: 17px 17px 17px 17px;
@@ -306,7 +306,7 @@
   var dosbox_DOOM = new Dosbox({
     id: "DOOM",
     onload: function (dosbox) {
-      dosbox_DOOM.run("/cdn/upload/DOOM-@evilution.zip", "./DOOM/DOOM.EXE");
+      dosbox_DOOM.run("cdn/upload/DOOM-@evilution.zip", "./DOOM/DOOM.EXE");
     },
     onrun: function (dosbox, app) {
       console.log("App '" + app + "' is runned");
@@ -353,7 +353,7 @@
 <span class="lineno"> 6</span>     <span class="nt">&lt;title&gt;</span>DOOM<span class="nt">&lt;/title&gt;</span>
 <span class="lineno"> 7</span>     <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
 <span class="lineno"> 8</span>       <span class="nc">.dosbox-container</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">320px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span> <span class="p">}</span>
-<span class="lineno"> 9</span>       <span class="nc">.dosbox-container</span> <span class="o">&gt;</span> <span class="nc">.dosbox-overlay</span> <span class="p">{</span> <span class="k">background</span><span class="o">:</span> <span class="sx">url(https://js-dos.com/cdn/DOOM.png)</span><span class="p">;</span> <span class="p">}</span>
+<span class="lineno"> 9</span>       <span class="nc">.dosbox-container</span> <span class="o">&gt;</span> <span class="nc">.dosbox-overlay</span> <span class="p">{</span> <span class="k">background</span><span class="o">:</span> <span class="sx">url(cdn/DOOM.png)</span><span class="p">;</span> <span class="p">}</span>
 <span class="lineno">10</span>     <span class="nt">&lt;/style&gt;</span>
 <span class="lineno">11</span>   <span class="nt">&lt;/head&gt;</span>
 <span class="lineno">12</span>   <span class="nt">&lt;body&gt;</span>
@@ -361,7 +361,7 @@
 <span class="lineno">14</span>     <span class="nt">&lt;br/&gt;</span>
 <span class="lineno">15</span>     <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">&quot;dosbox.requestFullScreen();&quot;</span><span class="nt">&gt;</span>Make fullscreen<span class="nt">&lt;/button&gt;</span>
 <span class="lineno">16</span>     
-<span class="lineno">17</span>     <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;https://js-dos.com/cdn/js-dos-api.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="lineno">17</span>     <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;cdn/js-dos-api.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="lineno">18</span>     <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
 <span class="lineno">19</span>       <span class="kd">var</span> <span class="nx">dosbox</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dosbox</span><span class="p">({</span>
 <span class="lineno">20</span>         <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;dosbox&quot;</span><span class="p">,</span>
