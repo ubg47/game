@@ -4,24 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Toilets Worms Shooter</title>
-  <script>
-  // Minimal Yandex SDK compatibility for standalone hosting
+ <script>
+  // Yandex SDK compatibility for GitHub Pages
   window.ysdk = {
+    serverTime: function() {
+      return Date.now();
+    },
+
     features: {
-      LoadingAPI: { ready: function() {} },
+      LoadingAPI: {
+        ready: function() {}
+      },
       GameplayAPI: {
         start: function() {},
         stop: function() {}
       }
     },
+
     getPlayer: async function() {
       return {
-        getUniqueID: function() { return "github-player"; },
-        getName: function() { return "Player"; },
-        getData: async function() { return {}; },
+        getUniqueID: function() {
+          return "github-player";
+        },
+        getName: function() {
+          return "Player";
+        },
+        getData: async function() {
+          return {};
+        },
         setData: async function() {}
       };
     },
+
     getPayments: async function() {
       return {
         getCatalog: async function() { return []; },
