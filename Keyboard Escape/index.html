@@ -377,27 +377,60 @@ console.log("Compressed WASM size:", wasmCompressed.byteLength);
         setProgress(80, "Downloading framework...");
         const frameworkResult = await fetchSingleFile(frameworkFile);
 
-        setProgress(83, "Rebuilding and decompressing game files...");
-        // Make independent copies of the decompressed buffers for Blob creation.
-let dataBytes, wasmBytes;
+setProgress(83, "Preparing game files...");
 
-try {
-  dataBytes = new Uint8Array(brotli.decompress(dataCompressed));
-  console.log("DATA decompressed successfully:", dataBytes.byteLength);
-} catch (e) {
-  throw new Error("DATA decompression failed: " + e.message);
+// DATA is already decompressed (UnityWebData1.0 header).
+const dataBytes = dataCompressed;
+
+// Check whether WASM is already decompressed.
+const wasmIsReady =
+    wasmCompressed[0] === 0x00 &&
+    wasmCompressed[1] === 0x61 &&
+    wasmCompressed[2] === 0x73 &&
+    wasmCompressed[3] === 0x6D;
+
+let wasmBytes;
+
+if (wasmIsReady) {
+    wasmBytes = wasmCompressed;
+    console.log("WASM is already decompressed.");
+} else {
+    try {
+        wasmBytes = new Uint8Array(brotli.decompress(wasmCompressed));
+        console.log("WASM decompressed:", wasmBytes.byteLength);
+    } catch (e) {
+        throw new Error("WASM decompression failed: " + String(e));
+    }
 }
 
-try {
-  wasmBytes = new Uint8Array(brotli.decompress(wasmCompressed));
-  console.log("WASM decompressed successfully:", wasmBytes.byteLength);
-} catch (e) {
-  throw new Error("WASM decompression failed: " + e.message);
-}
-        const frameworkBytes = frameworkResult.alreadyDecompressed
-          ? frameworkResult.bytes
-          : new Uint8Array(brotli.decompress(frameworkResult.bytes));
+// Check whether framework is already JavaScript.
+const frameworkText = new TextDecoder().decode(
+    frameworkResult.bytes.slice(0, 40)
+);
 
+let frameworkBytes;
+
+if (
+    frameworkText.includes("var ") ||
+    frameworkText.includes("function") ||
+    frameworkText.includes("unityFramework")
+) {
+    frameworkBytes = frameworkResult.bytes;
+    console.log("Framework is already decompressed.");
+} else {
+    try {
+        frameworkBytes = new Uint8Array(
+            brotli.decompress(frameworkResult.bytes)
+        );
+        console.log("Framework decompressed:", frameworkBytes.byteLength);
+    } catch (e) {
+        throw new Error("Framework decompression failed: " + String(e));
+    }
+}
+
+console.log("DATA:", dataBytes.byteLength);
+console.log("WASM:", wasmBytes.byteLength);
+console.log("Framework:", frameworkBytes.byteLength);
         setProgress(91, "Starting Unity...");
         const config = {
           dataUrl: makeObjectUrl(dataBytes, "application/octet-stream"),
