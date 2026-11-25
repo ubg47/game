@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Toilets Worms Shooter</title>
+  <script src="sdk.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+             padding: 0;
+            margin: 0;
+            /* Отключаем скролл и лонгтап на IOS */
+            overflow: hidden;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            width: 100%;
+            height: 100%;
+            background: #000;
+      width: 100%; height: 100%; margin: 0; overflow: hidden;
+      background: #000; font-family: Arial, sans-serif;
+    }
+    #game-container {
+      position: fixed; inset: 0; width: 100vw; height: 100vh;
+      height: 100dvh; background: #000; overflow: hidden;
+    }
+    #unity-canvas {
+      display: block; width: 100%; height: 100%;
+      background: #000; outline: none;
+    }
+    #loading {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 14px;
+      color: white; background: #000; z-index: 2;
+    }
+    #loading.hidden { display: none; }
+    #loading-title { font-size: clamp(20px, 4vw, 32px); font-weight: 700; text-align: center; }
+    #progress-track {
+      width: min(420px, 75vw); height: 10px;
+      border-radius: 20px; background: #333; overflow: hidden;
+    }
+    #progress-bar { width: 0%; height: 100%; background: #19a7ff; transition: width .15s; }
+    #status { color: #bbb; font-size: 13px; text-align: center; max-width: 85vw; }
+    #fullscreen {
+      position: absolute; top: max(12px, env(safe-area-inset-top));
+      right: max(12px, env(safe-area-inset-right)); z-index: 3;
+      border: 1px solid #ffffff55; border-radius: 8px;
+      background: #111c; color: #fff; padding: 10px 14px;
+      font-size: 14px; cursor: pointer;
+    }
+    #error {
+      display: none; position: absolute; left: 5%; right: 5%; bottom: 5%;
+      z-index: 4; padding: 12px; color: #fff; background: #8b0000;
+      border-radius: 8px; white-space: pre-wrap; font-size: 13px;
+      max-height: 45%; overflow: auto;
+    }
+           #unity-container,
+        #unity-canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        #unity-container.unity-mobile,
+        .unity-mobile #unity-canvas {
+            position: fixed;
+            inset: 0;
+        }
+
+        html.sb-ad-open,
+        body.sb-ad-open {
+            overflow: visible !important;
+        }
+
+        body.sb-ad-open #unity-container,
+        body.sb-ad-open #unity-canvas {
+            pointer-events: none !important;
+            z-index: 0 !important;
+        }
+
+        body.sb-ad-open iframe {
+            max-width: none !important;
+            max-height: none !important;
+        }
+
+        /* Unity / реклама на ПК подсовывают <input type="file"> в угол —
+           нативный «Выбрать файл» и постоянный проводник. Игре загрузка файлов не нужна. */
+        input[type="file"] {
+            display: none !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+            opacity: 0 !important;
+            width: 0 !important;
+            height: 0 !important;
+            max-width: 0 !important;
+            max-height: 0 !important;
+            position: fixed !important;
+            left: -10000px !important;
+            top: -10000px !important;
+            z-index: -1 !important;
+        }
+
+        #unity-loading-bar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        #unity-progress-bar-empty {
+            width: min(360px, 72vw);
+            height: 18px;
+            margin: 0;
+            padding: 3px;
+            text-align: left;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.28),
+                inset 0 1px 0 rgba(255, 255, 255, 0.22);
+            overflow: hidden;
+            backdrop-filter: blur(6px);
+        }
+
+        #unity-progress-bar-full {
+            width: 0%;
+            height: 100%;
+            border-radius: 999px;
+            background:
+                linear-gradient(90deg, #67e8f9 0%, #38bdf8 45%, #a78bfa 100%);
+            box-shadow:
+                0 0 16px rgba(56, 189, 248, 0.65),
+                inset 0 1px 0 rgba(255, 255, 255, 0.42);
+            transition: width 0.18s ease-out;
+        }
+
+        #unity-progress-percent {
+            min-height: 22px;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.4px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+        }
+
+        .light #unity-progress-bar-empty {
+            background: rgba(0, 0, 0, 0.08);
+            border-color: rgba(0, 0, 0, 0.28);
+            box-shadow:
+                0 10px 24px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.65);
+        }
+
+        .light #unity-progress-percent {
+            color: #111;
+            text-shadow: none;
+        }
+
+        #mobile-keyboard-panel {
+            position: fixed;
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            top: auto;
+            z-index: 99999;
+            display: none;
+            padding: 10px;
+            border-radius: 12px;
+            background: rgba(15, 15, 20, 0.88);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(6px);
+            -webkit-user-select: text;
+            user-select: text;
+        }
+
+        body.mobile-keyboard-landscape #mobile-keyboard-panel {
+            top: calc(env(safe-area-inset-top, 0px) + 12px);
+            bottom: auto;
+        }
+
+        #mobile-keyboard-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #mobile-keyboard-input {
+            flex: 1 1 auto;
+            height: 44px;
+            border: 0;
+            border-radius: 10px;
+            outline: none;
+            padding: 0 12px;
+            font-size: 17px;
+            color: #111;
+            background: #fff;
+            box-sizing: border-box;
+            -webkit-user-select: text;
+            user-select: text;
+        }
+
+        .mobile-kbd-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            border: 0;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        #mobile-keyboard-confirm { background: #16a34a; }
+        #mobile-keyboard-cancel { background: #334155; }
+  </style>
+</head>
+<!-- Additional body modules -->
+<!-- GamePush SDK (chat) -->
+<script src="gp-chat-bootstrap.js"></script>
+<body>
+  <main id="game-container">
+    <canvas id="unity-canvas" tabindex="-1"></canvas>
+    <div id="loading">
+      <div id="loading-title">Loading Toilets Worms Shooter...</div>
+      <div id="progress-track"><div id="progress-bar"></div></div>
+      <div id="status">Starting game...</div>
+    </div>
+    <button id="fullscreen" type="button">⛶ Fullscreen</button>
+    <div id="error"></div>
+  </main>
+
+  <script>
+    const canvas = document.getElementById("unity-canvas");
+    const loading = document.getElementById("loading");
+    const progressBar = document.getElementById("progress-bar");
+    const statusText = document.getElementById("status");
+    const errorBox = document.getElementById("error");
+
+    // Folder containing the Unity Build files.
+    const buildUrl = "./Build/";
+
+    // Data is split into 2 parts (.part001-.part002); WASM into 74 (.part001-.part074).
+    const dataFile = buildUrl + "build.data";
+    const wasmFile = buildUrl + "build.wasm";
+    const frameworkFile = buildUrl + "build.framework.js";
+    const loaderFile = buildUrl + "build.loader.js";
+
+    const DATA_PARTS = 4;
+    const WASM_PARTS = 4;
+    const PARTS_PER_BATCH = 8;
+
+    let unityInstance = null;
+    const temporaryUrls = [];
+
+    function setProgress(percent, message) {
+      progressBar.style.width = Math.max(0, Math.min(100, percent)) + "%";
+      statusText.textContent = message;
+    }
+
+    function showError(message) {
+      errorBox.style.display = "block";
+      errorBox.textContent = "The game could not be loaded.\n\n" + message;
+      statusText.textContent = "Loading failed.";
+    }
+
+    // Split filenames use exactly three digits:
+    // example: build.data.br.part001
+    //          build.wasm.br.part001 ... part074
+    async function fetchPart(baseFile, partNumber, totalParts) {
+      const partName = String(partNumber).padStart(3, "0");
+      const url = baseFile + ".part" + partName;
+
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(
+          "Missing part " + partNumber + " of " + totalParts +
+          ". Expected this exact filename:\n" + url +
+          "\n\nCheck that the file exists in the correct folder and that its name ends in .part" +
+          partName + "."
+        );
+      }
+
+      const encoding = (response.headers.get("Content-Encoding") || "").toLowerCase();
+      if (encoding.includes("br")) {
+        throw new Error(
+          "The server is Brotli-decoding this split part (Content-Encoding: br). " +
+          "Split chunks must be served as unchanged binary bytes. Disable automatic Brotli " +
+          "encoding for these .part files."
+        );
+      }
+
+      const bytes = new Uint8Array(await response.arrayBuffer());
+      if (!bytes.length) throw new Error("The part is empty: " + url);
+      return bytes;
+    }
+
+    async function loadSplitFile(baseFile, partCount, label, progressStart, progressEnd) {
+      const parts = new Array(partCount);
+      let finished = 0;
+
+      for (let start = 1; start <= partCount; start += PARTS_PER_BATCH) {
+        const end = Math.min(start + PARTS_PER_BATCH - 1, partCount);
+        const batch = [];
+        for (let part = start; part <= end; part++) {
+          batch.push(fetchPart(baseFile, part, partCount).then(bytes => ({ part, bytes })));
+        }
+
+        const results = await Promise.all(batch);
+        for (const result of results) {
+          parts[result.part - 1] = result.bytes;
+          finished++;
+        }
+
+        const fraction = finished / partCount;
+        const progress = progressStart + fraction * (progressEnd - progressStart);
+        setProgress(progress, "Downloading " + label + " parts: " + finished + "/" + partCount);
+      }
+
+      // Join the binary chunks in their numbered order.
+      const totalLength = parts.reduce((sum, part) => sum + part.byteLength, 0);
+      const joined = new Uint8Array(totalLength);
+      let offset = 0;
+      for (const part of parts) {
+        joined.set(part, offset);
+        offset += part.byteLength;
+      }
+      return joined;
+    }
+
+    async function fetchSingleFile(url) {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Could not fetch " + url + " (HTTP " + response.status + ").");
+      }
+      const bytes = new Uint8Array(await response.arrayBuffer());
+      return {
+        bytes,
+        alreadyDecompressed: (response.headers.get("Content-Encoding") || "")
+          .toLowerCase().includes("br")
+      };
+    }
+
+    function makeObjectUrl(bytes, mimeType) {
+      const url = URL.createObjectURL(new Blob([bytes], { type: mimeType }));
+      temporaryUrls.push(url);
+      return url;
+    }
+
+    async function startGame() {
+      try {
+        setProgress(1, "Loading Brotli decompressor...");
+        // Brotli is decompressed here so the resulting Blob URLs do not need
+        // special server Content-Encoding headers.
+        const brotliModule = await import(
+          "https://unpkg.com/brotli-wasm@3.0.1/index.web.js?module"
+        );
+        const brotli = await brotliModule.default;
+
+        setProgress(3, "Downloading split game files...");
+        const dataCompressed = await loadSplitFile(dataFile, DATA_PARTS, "data", 3, 24);
+        const wasmCompressed = await loadSplitFile(wasmFile, WASM_PARTS, "WASM", 24, 78);
+
+        setProgress(80, "Downloading framework...");
+        const frameworkResult = await fetchSingleFile(frameworkFile);
+
+        setProgress(83, "Rebuilding and decompressing game files...");
+        // Make independent copies of the decompressed buffers for Blob creation.
+        const dataBytes = new Uint8Array(brotli.decompress(dataCompressed));
+        const wasmBytes = new Uint8Array(brotli.decompress(wasmCompressed));
+        const frameworkBytes = frameworkResult.alreadyDecompressed
+          ? frameworkResult.bytes
+          : new Uint8Array(brotli.decompress(frameworkResult.bytes));
+
+        setProgress(91, "Starting Unity...");
+        const config = {
+          dataUrl: makeObjectUrl(dataBytes, "application/octet-stream"),
+          frameworkUrl: makeObjectUrl(frameworkBytes, "application/javascript"),
+          codeUrl: makeObjectUrl(wasmBytes, "application/wasm"),
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: "CrazyGames",
+          productName: "Toilets Worms Shooter",
+          productVersion: "2"
+        };
+
+        if (typeof createUnityInstance !== "function") {
+          throw new Error("Unity loader loaded, but createUnityInstance was not found.");
+        }
+
+        createUnityInstance(canvas, config, (progress) => {
+          setProgress(91 + progress * 9, "Starting game... " + Math.round(progress * 100) + "%");
+        }).then((instance) => {
+          unityInstance = instance;
+          window.unityInstance = instance;
+          loading.classList.add("hidden");
+          resizeGame();
+        }).catch((error) => {
+          showError(error && error.message ? error.message : String(error));
+        });
+      } catch (error) {
+        showError(error && error.message ? error.message : String(error));
+      }
+    }
+
+    const loader = document.createElement("script");
+    loader.src = loaderFile;
+    loader.onload = startGame;
+    loader.onerror = () => showError(
+      "Could not load the Unity loader:\n" + loaderFile +
+      "\n\nCheck that this file exists inside the Build folder."
+    );
+    // Chrome blocks fetch() from local file:// pages. Serve this folder over
+    // localhost instead (the included START_GAME_SERVER.bat does this).
+    if (location.protocol === "file:") {
+      loading.classList.add("hidden");
+      showError(
+        "This game cannot be opened by double-clicking the HTML file.\n\n" +
+        "Chrome blocks access to the split .part001 files from file:// pages.\n\n" +
+        "FIX: Put START_GAME_SERVER.bat in this same folder, double-click it, " +
+        "then click this HTML file in the browser's localhost file list.\n\n" +
+        "Keep the Build folder next to this HTML file."
+      );
+    } else {
+      document.head.appendChild(loader);
+    }
+
+    function resizeGame() {
+      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(canvas.clientWidth * ratio);
+      canvas.height = Math.round(canvas.clientHeight * ratio);
+    }
+    window.addEventListener("resize", resizeGame);
+    window.addEventListener("orientationchange", () => setTimeout(resizeGame, 150));
+
+    document.getElementById("fullscreen").addEventListener("click", async () => {
+      try {
+        const target = document.getElementById("game-container");
+        if (!document.fullscreenElement) {
+          await (target.requestFullscreen ? target.requestFullscreen() : canvas.requestFullscreen());
+        } else {
+          await document.exitFullscreen();
+        }
+      } catch (error) {
+        showError("Fullscreen is not available: " + error.message);
+      }
+    });
+
+    document.addEventListener("fullscreenchange", () => {
+      document.getElementById("fullscreen").textContent =
+        document.fullscreenElement ? "✕ Exit fullscreen" : "⛶ Fullscreen";
+      setTimeout(resizeGame, 100);
+    });
+
+    window.addEventListener("beforeunload", () => {
+      for (const url of temporaryUrls) URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>
