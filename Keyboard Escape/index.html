@@ -4,7 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Toilets Worms Shooter</title>
-<script src="./sdk.js"></script>
+<script>
+window.ysdk = {
+    serverTime: () => Date.now(),
+
+    features: {
+        LoadingAPI: {
+            ready: () => {}
+        },
+        GameplayAPI: {
+            start: () => {},
+            stop: () => {}
+        }
+    },
+
+    getPlayer: async () => ({
+        getUniqueID: () => "github-player",
+        getName: () => "Player",
+        getData: async () => ({}),
+        setData: async () => {}
+    }),
+
+    getPayments: async () => ({
+        getCatalog: async () => [],
+        getPurchases: async () => [],
+        purchase: async () => ({}),
+        consumePurchase: async () => {}
+    })
+};
+
+window.LoadCloud = function() {
+    console.log("Cloud saves disabled on GitHub Pages.");
+};
+
+window.GetPayments = function() {
+    console.log("Payments disabled on GitHub Pages.");
+};
+
+window.InitGame = function() {
+    console.log("Game platform initialisation bypassed.");
+};
+</script>
   <style>
     * { box-sizing: border-box; }
     html, body {
