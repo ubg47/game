@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+<title>Steal An Egg</title>
+<script>
+      // ТИШИНА В КОНСОЛИ У ИГРОКОВ. Ставится ДО всего остального (SDK, загрузчик, движок), поэтому
+      // молчат все: служебные строки загрузчика Unity («[UnityCache]», «You can reduce startup time…»),
+      // движок, SDK, наши предупреждения и ошибки. Необработанные ошибки («Uncaught …») тоже не
+      // печатаются. Ошибки C# при этом уходят в GameAnalytics (ReleaseLogFilter).
+      // Остаётся только диагностика рекламы и сохранений — по ней разбираем жалобы игроков.
+      // Отладка на проде: в консоли localStorage.klb_debug = "1" и перезагрузить — всё видно как раньше.
+      (function () {
+        try { if (window.localStorage && localStorage.getItem("klb_debug") === "1") return; } catch (e) {}
+        var keep = ["[Реклама]", "[SaveManager]"];
+        var log = console.log, warn = console.warn;
+        function quiet() {}
+        function only(orig) {
+          return function (m) {
+            if (typeof m !== "string") return;
+            for (var i = 0; i < keep.length; i++)
+              if (m.indexOf(keep[i]) === 0) { try { orig.apply(console, arguments); } catch (e) {} return; }
+          };
+        }
+        try {
+          console.log = console.info = console.debug = only(log);
+          console.warn = only(warn);
+          ["error", "trace", "assert", "table", "dir", "dirxml", "group", "groupCollapsed", "groupEnd",
+           "count", "time", "timeEnd", "timeLog"].forEach(function (k) { if (console[k]) console[k] = quiet; });
+        } catch (e) {}
+        window.addEventListener("error", function (e) { try { e.preventDefault(); } catch (x) {} }, true);
+        window.addEventListener("unhandledrejection", function (e) { try { e.preventDefault(); } catch (x) {} });
+      })();
+      // Движок на старте спрашивает у WebGL2 MSAA для SNORM-форматов (R8/RG8/RGBA8/R16/RG16/RGBA16_SNORM).
+      // Они в WebGL2 не рендерятся НИКОГДА, браузер отвечает null и пишет «WebGL: INVALID_ENUM:
+      // getInternalformatParameter» — это не console.*, заглушить иначе нельзя. Отвечаем тот же null сразу.
+      (function () {
+        var P = window.WebGL2RenderingContext && WebGL2RenderingContext.prototype;
+        if (!P || !P.getInternalformatParameter) return;
+        var never = { 0x8F94: 1, 0x8F95: 1, 0x8F97: 1, 0x8F98: 1, 0x8F99: 1, 0x8F9B: 1 };
+        var orig = P.getInternalformatParameter;
+        P.getInternalformatParameter = function (target, format, pname) {
+          if (never[format]) return null;
+          return orig.call(this, target, format, pname);
+        };
+      })();
+    </script>
+<link rel="shortcut icon" href="TemplateData/favicon.ico"/>
+<link rel="stylesheet" href="TemplateData/style.css"/>
+<!-- Yandex Games SDK: на платформе грузится /sdk.js; вне Яндекса — 404, YaGames нет. -->
+<script src="sdk.js"></script>
+<style>
+      /* Игра на весь экран. ВАЖНО: перебиваем правило style.css «.unity-desktop #unity-container»
+         (центрирование без размера) — иначе canvas выходит маленьким. Отсюда !important + viewport-единицы. */
+      html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; background:#231F20; }
+      #unity-container, #unity-container.unity-desktop {
+        position:fixed !important; left:0 !important; top:0 !important; inset:0 !important;
+        width:100vw !important; height:100vh !important; transform:none !important;
+      }
+      #unity-canvas { width:100vw !important; height:100vh !important; display:block; background:#231F20; touch-action:none; }
+      /* Белый баннер Unity (#unity-warning, background:white) на iOS вылезал «белым квадратом». Прячем. */
+      #unity-warning { display:none !important; }
+
+      /* Требования модерации п.1.6.2.7 и п.1.10.2 — на ВСЕЙ странице, а не только на канвасе:
+         нет выделения, нет меню долгого нажатия на iOS, нет «потяни, чтобы обновить»,
+         нет зума и прокрутки жестом по краям страницы. */
+      html, body {
+        -webkit-user-select:none; user-select:none;
+        -webkit-touch-callout:none;
+        overscroll-behavior:none;
+        touch-action:none;
+      }
+      /* Скрытое поле ввода Unity (мобильная клавиатура) должно работать как обычно. */
+      input, textarea { -webkit-user-select:text; user-select:text; }
+    </style>
+</head>
+<body>
+<div id="unity-container" class="unity-desktop">
+<canvas id="unity-canvas" tabindex="-1"></canvas>
+<div id="unity-loading-bar">
+<div id="unity-logo"></div>
+<div id="unity-progress-bar-empty">
+<div id="unity-progress-bar-full"></div>
+</div>
+</div>
+<div id="unity-warning"> </div>
+</div>
+<script>
+      var canvas = document.querySelector("#unity-canvas");
+
+      // п.1.6.2.7: системное меню правого клика и выделение запрещены на всей странице.
+      // Правый клик по-прежнему доходит до Unity (вращение камеры) — гасим только меню браузера.
+      // Поля ввода не трогаем: там выделение и курсор нужны.
+      function _isTextField(t) { return t && t.closest && t.closest("input, textarea"); }
+      document.addEventListener("contextmenu", function (e) { if (!_isTextField(e.target)) e.preventDefault(); });
+      document.addEventListener("selectstart", function (e) { if (!_isTextField(e.target)) e.preventDefault(); });
+
+      // НЕ показываем баннер в DOM (это был «белый квадрат» на iOS) и не пишем в консоль.
+      function unityShowBanner(msg, type) {}
+
+      // Возврат фокуса на игру после закрытия НАШЕЙ рекламы (зовётся из YandexSDK.jslib).
+      window.yaFocusCanvas = function () {
+        try { if (canvas) canvas.focus(); if (window.focus) window.focus(); } catch (e) {}
+      };
+
+      // ПОЛНАЯ ОСТАНОВКА ИГРЫ, КОГДА ВКЛАДКА СКРЫТА — замена runInBackground=false.
+      // pauseMainLoop останавливает весь цикл Unity: замирает ВСЁ (анимации, НПС, волна, рендер),
+      // CPU и GPU простаивают. Настройкой Unity этого не добиться: она паузит по ФОКУСУ, а фокус в
+      // iframe Яндекса сломан — после закрытия рекламы он уходит на страницу Яндекса и не
+      // возвращается (программно забрать нельзя, проверено). Игра висела до клика.
+      //
+      // Паузим ТОЛЬКО по скрытой вкладке. По потере ФОКУСА полную остановку НЕ ставим — пробовали,
+      // и на iOS это ломало игру намертво: приходил blur, цикл вставал, а снять было нечем.
+      // Случай «ушёл в другое окно» закрывает мягкая пауза в C# (AdPause): волна и анимации стоят,
+      // НПС бегают, и снимается она любым касанием.
+      var _klbPausedAt = 0;
+      function klbPause() {
+        var m = window.unityInstance && window.unityInstance.Module;
+        if (!m || !m.pauseMainLoop) return;
+        try {
+          m.pauseMainLoop();
+          _klbPausedAt = Date.now();
+        } catch (e) {}
+      }
+      function klbResume() {
+        var m = window.unityInstance && window.unityInstance.Module;
+        if (!m || !m.resumeMainLoop) return;
+        try {
+          m.resumeMainLoop();
+          _klbPausedAt = 0;
+        } catch (e) {}
+      }
+
+      document.addEventListener("visibilitychange", function () {
+        // Паузим НЕМЕДЛЕННО, без отсрочки: отложенная пауза в скрытой вкладке задерживается браузером
+        // до секунды, и Unity успевает тикнуть с огромным deltaTime — волна и анимации прыгали вперёд.
+        // Сохранению это не мешает: jslib шлёт SendMessage, а он работает и при остановленном цикле.
+        if (document.hidden) klbPause();
+        else                 klbResume();
+      });
+      // Страховка: любое касание/клик означает, что игрок здесь — снимаем паузу, если она осталась.
+      ["pointerdown", "touchstart", "keydown"].forEach(function (e) {
+        window.addEventListener(e, klbResume, true);
+      });
+
+      // Yandex Games SDK: init как можно раньше, держим в window.ysdk.
+      window.ysdk = null;
+      window.ysdkPromise = (window.YaGames ? YaGames.init() : Promise.resolve(null))
+        .then(function (sdk) {
+          window.ysdk = sdk;
+          // Стики-баннер уже на экране загрузки — кроме тех, у кого локально отмечена покупка
+          // отключения рекламы (sae_ads_off). Дальше баннером управляет игра (YandexBanner.cs).
+          try {
+            var adsOff = false;
+            try { adsOff = window.localStorage.getItem("sae_ads_off") === "1"; } catch (e) {}
+            if (sdk && sdk.adv && !adsOff) sdk.adv.showBannerAdv().catch(function () {});
+          } catch (e) {}
+          // Подстраховка: платформа закрыла свою рекламу — снимаем паузу, если она почему-то стоит.
+          try {
+            if (sdk && typeof sdk.on === "function") sdk.on("game_api_resume", klbResume);
+          } catch (e) {}
+          return sdk;
+        })
+        .catch(function () { return null; });
+
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/WebGL.loader.js";
+      var config = {
+        arguments: [],
+        // ВНИМАНИЕ: расширение .unityweb, а НЕ .br — включён Decompression Fallback, и Unity
+        // переименовал файлы, чтобы браузер не пытался распаковать их сам по Content-Encoding.
+        dataUrl: buildUrl + "/WebGL.data.unityweb",
+        frameworkUrl: buildUrl + "/WebGL.framework.js.unityweb",
+        codeUrl: buildUrl + "/WebGL.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Boundless Bytes",
+        productName: "Steal An Egg",
+        productVersion: "1.1.10",
+        showBanner: unityShowBanner,
+        // ОБРАБОТЧИК ОШИБОК. Без него Unity на ЛЮБУЮ необработанную ошибку показывает игроку
+        // модальное окно «An error occurred running the Unity content on this page…» с упоминанием
+        // JavaScript-консоли — именно его поймала модерация (п.1.14). Возврат true говорит загрузчику,
+        // что ошибка обработана, и окно не показывается.
+        errorHandler: function () { return true; },
+        // Движок печатает свои служебные строки через print/printErr — глушим.
+        print: function () {},
+        printErr: function () {},
+        // Нативное разрешение (иначе Unity рендерит в 1x и «шакалит» на ретине).
+        devicePixelRatio: window.devicePixelRatio || 1,
+      };
+
+      document.querySelector("#unity-loading-bar").style.display = "block";
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+          document.querySelector("#unity-loading-bar").style.display = "none";
+          window.unityInstance = unityInstance;   // нужен для паузы игрового цикла (см. выше)
+          // NB: canvas.focus() здесь НЕ помогает — проверено. Браузер не отдаёт фокус iframe с чужого
+          // домена без действия пользователя; до первого клика игра фокуса не имеет.
+          // LoadingAPI.ready() СПЕЦИАЛЬНО НЕ здесь: его зовёт C# (StartupGate/jslib YaLoadingReady)
+          // РОВНО в момент, когда игра стала доступна для взаимодействия (треб. модерации п.1.19).
+        }).catch(() => {
+          // НЕ alert: служебное окно на экране игрока — замечание модерации (п.1.14). И не консоль.
+        });
+      };
+      document.body.appendChild(script);
+
+      // Подстраховка ready(): C# (jslib YaLoadingReady) при вызове ставит window._klbLoadingReady=true.
+      // Если за 30с он не сработал (сбой в игре) — зовём сами, чтобы лоадер Яндекса не завис навсегда.
+      setTimeout(function () {
+        if (window._klbLoadingReady) return;
+        if (window.ysdkPromise) window.ysdkPromise.then(function (sdk) {
+          try {
+            if (!window._klbLoadingReady && sdk && sdk.features && sdk.features.LoadingAPI) {
+              sdk.features.LoadingAPI.ready();
+              window._klbLoadingReady = true;
+            }
+          } catch (e) {}
+        });
+      }, 30000);
+
+      // Разблокировка iOS-аудио — в jslib (KLBInstallAudioUnlock). Keep-alive УБРАН; фоновая музыка
+      // переведена со Streaming на DecompressOnLoad (Web Audio, без <audio>-элемента) — иначе на iOS
+      // вылезал медиаплеер в шторке (реджект п.1.6.1.6).
+      // Стики-баннер, статус геймплея, мягкая пауза и сейв при уходе — в C# (YandexBanner /
+      // YandexGameplay) через jslib KLBInstallVisibility / KLBInstallPlatformEvents.
+    </script>
+</body>
+</html>
