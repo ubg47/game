@@ -368,16 +368,32 @@
         const brotli = await brotliModule.default;
 
         setProgress(3, "Downloading split game files...");
-        const dataCompressed = await loadSplitFile(dataFile, DATA_PARTS, "data", 3, 24);
-        const wasmCompressed = await loadSplitFile(wasmFile, WASM_PARTS, "WASM", 24, 78);
+const dataCompressed = await loadSplitFile(dataFile, DATA_PARTS, "data", 3, 24);
+console.log("Compressed DATA size:", dataCompressed.byteLength);
+
+const wasmCompressed = await loadSplitFile(wasmFile, WASM_PARTS, "WASM", 24, 78);
+console.log("Compressed WASM size:", wasmCompressed.byteLength);
 
         setProgress(80, "Downloading framework...");
         const frameworkResult = await fetchSingleFile(frameworkFile);
 
         setProgress(83, "Rebuilding and decompressing game files...");
         // Make independent copies of the decompressed buffers for Blob creation.
-        const dataBytes = new Uint8Array(brotli.decompress(dataCompressed));
-        const wasmBytes = new Uint8Array(brotli.decompress(wasmCompressed));
+let dataBytes, wasmBytes;
+
+try {
+  dataBytes = new Uint8Array(brotli.decompress(dataCompressed));
+  console.log("DATA decompressed successfully:", dataBytes.byteLength);
+} catch (e) {
+  throw new Error("DATA decompression failed: " + e.message);
+}
+
+try {
+  wasmBytes = new Uint8Array(brotli.decompress(wasmCompressed));
+  console.log("WASM decompressed successfully:", wasmBytes.byteLength);
+} catch (e) {
+  throw new Error("WASM decompression failed: " + e.message);
+}
         const frameworkBytes = frameworkResult.alreadyDecompressed
           ? frameworkResult.bytes
           : new Uint8Array(brotli.decompress(frameworkResult.bytes));
