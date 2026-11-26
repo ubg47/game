@@ -86,9 +86,136 @@ window.addEventListener('pointerdown', () => {
     CANVAS.focus()
 })
 
-let bridgeScript = null
-let bridgeTimeout = null
-let bridgeLoaded = false
+
+let bridgeScript = null;
+let bridgeTimeout = null;
+let bridgeLoaded = false;
+
+// Detect GitHub Pages
+const isGitHubPages =
+    location.hostname === 'github.io' ||
+    location.hostname.endsWith('.github.io');
+
+// Standalone Playgama Bridge fallback
+function createStandaloneBridge() {
+
+    function makeService(defaults) {
+        return new Proxy(defaults || {}, {
+            get(target, property) {
+                if (property in target) return target[property];
+
+                if (property === 'on') return function () {};
+                if (property === 'setLoadingProgress') return function () {};
+
+                if (
+                    typeof property === 'string' &&
+                    (property.startsWith('is') ||
+                     property.includes('Supported'))
+                ) {
+                    return false;
+                }
+
+                return function () {
+                    return Promise.resolve(undefined);
+                };
+            }
+        });
+    }
+
+    return {
+        engine: 'unity',
+
+        PLATFORM_ID: {
+            YANDEX: 'yandex',
+            GAME_DISTRIBUTION: 'game_distribution'
+        },
+
+        initialize: function () {
+            return Promise.resolve();
+        },
+
+        game: makeService({
+            visibilityState: 'visible'
+        }),
+
+        platform: makeService({
+            id: '',
+            language: (navigator.language || 'en').slice(0, 2),
+            payload: '',
+            tld: '',
+            isAudioEnabled: true,
+            isGetAllGamesSupported: false,
+            isGetGameByIdSupported: false
+        }),
+
+        advertisement: makeService({
+            interstitialState: '',
+            rewardedPlacement: '',
+            advancedBannersState: ''
+        }),
+
+        device: makeService({
+            type: /Mobi|Android/i.test(navigator.userAgent)
+                ? 'mobile'
+                : 'desktop',
+            safeArea: {
+                top: 0,
+                bottom: 0,
+                left: 0,
+                right: 0
+            }
+        }),
+
+        storage: makeService({
+            defaultType: 'local_storage'
+        }),
+
+        player: makeService({
+            photos: [],
+            extra: null
+        }),
+
+        leaderboards: makeService({}),
+        payments: makeService({}),
+        remoteConfig: makeService({}),
+        achievements: makeService({}),
+        social: makeService({})
+    };
+}
+
+// GitHub Pages: run without the external platform SDK
+if (isGitHubPages) {
+
+    console.info(
+        'GitHub Pages standalone mode: Playgama SDK disabled.'
+    );
+
+    window.bridge = createStandaloneBridge();
+
+    initializeBridge();
+
+} else {
+
+    bridgeScript = document.createElement('script');
+
+    bridgeScript.src =
+        'https://bridge.playgama.com/v1/stable/playgama-bridge.js';
+
+    bridgeScript.onload = initializeBridge;
+    bridgeScript.onerror = addLocalBridge;
+
+    bridgeTimeout = setTimeout(() => {
+        console.warn(
+            'CDN bridge failed. Loading local bridge.'
+        );
+
+        addLocalBridge();
+
+    }, 2000);
+
+    document.head.appendChild(bridgeScript);
+}
+
 
 function addLocalBridge() {
     if (bridgeLoaded) return
