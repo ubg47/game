@@ -1,0 +1,1880 @@
+{
+    "entries": [
+        {
+            "name": "",
+            "ext": "ds_store",
+            "path": ".DS_Store",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "google-services-desktop",
+            "ext": "json",
+            "path": "google-services-desktop.json",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "streamingassets_manifest",
+            "ext": "json",
+            "path": "streamingassets_manifest.json",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "AUDI_R8",
+            "ext": "png",
+            "path": "CarIcons/AUDI_R8.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "BMW_M3",
+            "ext": "png",
+            "path": "CarIcons/BMW_M3.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "BUGATTI_VEYRON",
+            "ext": "png",
+            "path": "CarIcons/BUGATTI_VEYRON.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C63_AMG_40",
+            "ext": "png",
+            "path": "CarIcons/C63_AMG_40.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DODGE_CHALLENGER",
+            "ext": "png",
+            "path": "CarIcons/DODGE_CHALLENGER.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "FORD_F150_RAPTOR",
+            "ext": "png",
+            "path": "CarIcons/FORD_F150_RAPTOR.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "KOENIGSEGG_AGERA",
+            "ext": "png",
+            "path": "CarIcons/KOENIGSEGG_AGERA.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "LAMBORGHINI_REVENTON",
+            "ext": "png",
+            "path": "CarIcons/LAMBORGHINI_REVENTON.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "MCLAREN_MP4",
+            "ext": "png",
+            "path": "CarIcons/MCLAREN_MP4.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "PORSCHE_911",
+            "ext": "png",
+            "path": "CarIcons/PORSCHE_911.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "082514SSPC",
+            "ext": "jpg",
+            "path": "HighResTextures/082514SSPC.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "082514SSPC_interior",
+            "ext": "jpg",
+            "path": "HighResTextures/082514SSPC_interior.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "121913SSPC",
+            "ext": "jpg",
+            "path": "HighResTextures/121913SSPC.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "121913SSPC_interior",
+            "ext": "jpg",
+            "path": "HighResTextures/121913SSPC_interior.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "122313SSPC",
+            "ext": "jpg",
+            "path": "HighResTextures/122313SSPC.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "122313SSPC_interior",
+            "ext": "jpg",
+            "path": "HighResTextures/122313SSPC_interior.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "AUDR8-HREwheels_red",
+            "ext": "jpg",
+            "path": "HighResTextures/AUDR8-HREwheels_red.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "AUDR8-bodycolor_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/AUDR8-bodycolor_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "AUDR8-carbonfiber_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/AUDR8-carbonfiber_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "AUDR8-interior_albedo",
+            "ext": "jpg",
+            "path": "HighResTextures/AUDR8-interior_albedo.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "AUDR8-interior_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/AUDR8-interior_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "AUDR8-parts_albedo",
+            "ext": "jpg",
+            "path": "HighResTextures/AUDR8-parts_albedo.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "AUDR8-parts_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/AUDR8-parts_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "AUDR8-parts_n",
+            "ext": "jpg",
+            "path": "HighResTextures/AUDR8-parts_n.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "AUDR8-wheels_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/AUDR8-wheels_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "AUDR8-wheels_hre_n",
+            "ext": "jpg",
+            "path": "HighResTextures/AUDR8-wheels_hre_n.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Atlas_Industrial_01",
+            "ext": "jpg",
+            "path": "HighResTextures/Atlas_Industrial_01.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "BugattiVeyron",
+            "ext": "jpg",
+            "path": "HighResTextures/BugattiVeyron.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "BugattiVeyron_interior",
+            "ext": "jpg",
+            "path": "HighResTextures/BugattiVeyron_interior.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Concrete03_d",
+            "ext": "jpg",
+            "path": "HighResTextures/Concrete03_d.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "FOR_RPTR-carpaint_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/FOR_RPTR-carpaint_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "FOR_RPTR-interior_albedo",
+            "ext": "jpg",
+            "path": "HighResTextures/FOR_RPTR-interior_albedo.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "FOR_RPTR-interior_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/FOR_RPTR-interior_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "FOR_RPTR-interior_normal",
+            "ext": "jpg",
+            "path": "HighResTextures/FOR_RPTR-interior_normal.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "FOR_RPTR-parts-metal_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/FOR_RPTR-parts-metal_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "FOR_RPTR-parts_albedo",
+            "ext": "ktx2",
+            "path": "HighResTextures/FOR_RPTR-parts_albedo.ktx2",
+            "fallbackExt": "png",
+            "fallbackPath": "HighResTextures/FOR_RPTR-parts_albedo.png"
+        },
+        {
+            "name": "FOR_RPTR-parts_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/FOR_RPTR-parts_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "FOR_RPTR-parts_normal",
+            "ext": "jpg",
+            "path": "HighResTextures/FOR_RPTR-parts_normal.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "FOR_RPTR-rimcaliper_albedo",
+            "ext": "jpg",
+            "path": "HighResTextures/FOR_RPTR-rimcaliper_albedo.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "FOR_RPTR-rimcaliper_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/FOR_RPTR-rimcaliper_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "FOR_RPTR-rimcaliper_normal",
+            "ext": "jpg",
+            "path": "HighResTextures/FOR_RPTR-rimcaliper_normal.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GR3D-tire-disc-C_albedo",
+            "ext": "jpg",
+            "path": "HighResTextures/GR3D-tire-disc-C_albedo.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GR3D-tire-disc-C_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/GR3D-tire-disc-C_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GR3D-tire-disc-C_n",
+            "ext": "jpg",
+            "path": "HighResTextures/GR3D-tire-disc-C_n.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GR3D-tire-disc-D_albedo",
+            "ext": "jpg",
+            "path": "HighResTextures/GR3D-tire-disc-D_albedo.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GR3D-tire-disc-D_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/GR3D-tire-disc-D_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GR3D-tire-disc-D_n",
+            "ext": "jpg",
+            "path": "HighResTextures/GR3D-tire-disc-D_n.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GR3D-tire-disc-E_albedo",
+            "ext": "jpg",
+            "path": "HighResTextures/GR3D-tire-disc-E_albedo.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GR3D-tire-disc-E_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/GR3D-tire-disc-E_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GR3D-tire-disc-E_n",
+            "ext": "jpg",
+            "path": "HighResTextures/GR3D-tire-disc-E_n.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GR3D-tire-disc-offroad-a_albedo",
+            "ext": "jpg",
+            "path": "HighResTextures/GR3D-tire-disc-offroad-a_albedo.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GR3D-tire-disc-offroad-a_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/GR3D-tire-disc-offroad-a_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GR3D-tire-disc-offroad-a_n",
+            "ext": "jpg",
+            "path": "HighResTextures/GR3D-tire-disc-offroad-a_n.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "HLCAT-bodycolor-red-stripe",
+            "ext": "jpg",
+            "path": "HighResTextures/HLCAT-bodycolor-red-stripe.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "HLCAT-bodycolor_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/HLCAT-bodycolor_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "HLCAT-carbonfiber_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/HLCAT-carbonfiber_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "HLCAT-interior-v2_albedo",
+            "ext": "jpg",
+            "path": "HighResTextures/HLCAT-interior-v2_albedo.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "HLCAT-interior_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/HLCAT-interior_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "HLCAT-parts_albedo",
+            "ext": "jpg",
+            "path": "HighResTextures/HLCAT-parts_albedo.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "HLCAT-parts_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/HLCAT-parts_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "HLCAT-parts_n",
+            "ext": "jpg",
+            "path": "HighResTextures/HLCAT-parts_n.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "HLCAT-wheels-gold_albedo",
+            "ext": "jpg",
+            "path": "HighResTextures/HLCAT-wheels-gold_albedo.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "HLCAT-wheels_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/HLCAT-wheels_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "HLCAT-wheels_n",
+            "ext": "jpg",
+            "path": "HighResTextures/HLCAT-wheels_n.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Lam_Rvntn-carpaint_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/Lam_Rvntn-carpaint_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Lam_Rvntn-interior_albedo",
+            "ext": "ktx2",
+            "path": "HighResTextures/Lam_Rvntn-interior_albedo.ktx2",
+            "fallbackExt": "png",
+            "fallbackPath": "HighResTextures/Lam_Rvntn-interior_albedo.png"
+        },
+        {
+            "name": "Lam_Rvntn-interior_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/Lam_Rvntn-interior_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Lam_Rvntn-interior_n",
+            "ext": "jpg",
+            "path": "HighResTextures/Lam_Rvntn-interior_n.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Lam_Rvntn-parts_albedo",
+            "ext": "ktx2",
+            "path": "HighResTextures/Lam_Rvntn-parts_albedo.ktx2",
+            "fallbackExt": "png",
+            "fallbackPath": "HighResTextures/Lam_Rvntn-parts_albedo.png"
+        },
+        {
+            "name": "Lam_Rvntn-parts_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/Lam_Rvntn-parts_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Lam_Rvntn-parts_n",
+            "ext": "jpg",
+            "path": "HighResTextures/Lam_Rvntn-parts_n.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Lam_Rvntn-rimcaliper_albedo",
+            "ext": "jpg",
+            "path": "HighResTextures/Lam_Rvntn-rimcaliper_albedo.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Lam_Rvntn-rimcaliper_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/Lam_Rvntn-rimcaliper_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Lam_Rvntn-rimcaliper_n",
+            "ext": "jpg",
+            "path": "HighResTextures/Lam_Rvntn-rimcaliper_n.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "POR_997GT3RS-carpaint_albedo",
+            "ext": "jpg",
+            "path": "HighResTextures/POR_997GT3RS-carpaint_albedo.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "POR_997GT3RS-carpaint_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/POR_997GT3RS-carpaint_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "POR_997GT3RS-interior_albedo",
+            "ext": "jpg",
+            "path": "HighResTextures/POR_997GT3RS-interior_albedo.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "POR_997GT3RS-interior_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/POR_997GT3RS-interior_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "POR_997GT3RS-interior_normal",
+            "ext": "jpg",
+            "path": "HighResTextures/POR_997GT3RS-interior_normal.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "POR_997GT3RS-parts_albedo",
+            "ext": "ktx2",
+            "path": "HighResTextures/POR_997GT3RS-parts_albedo.ktx2",
+            "fallbackExt": "png",
+            "fallbackPath": "HighResTextures/POR_997GT3RS-parts_albedo.png"
+        },
+        {
+            "name": "POR_997GT3RS-parts_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/POR_997GT3RS-parts_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "POR_997GT3RS-parts_normal",
+            "ext": "jpg",
+            "path": "HighResTextures/POR_997GT3RS-parts_normal.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "POR_997GT3RS-rimcaliper-black_albedo",
+            "ext": "jpg",
+            "path": "HighResTextures/POR_997GT3RS-rimcaliper-black_albedo.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "POR_997GT3RS-rimcaliper_ao",
+            "ext": "jpg",
+            "path": "HighResTextures/POR_997GT3RS-rimcaliper_ao.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "POR_997GT3RS-rimcaliper_normal",
+            "ext": "jpg",
+            "path": "HighResTextures/POR_997GT3RS-rimcaliper_normal.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "ReflectionProbe-0",
+            "ext": "jpg",
+            "path": "HighResTextures/ReflectionProbe-0.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "ReflectionProbe-1",
+            "ext": "ktx2",
+            "path": "HighResTextures/ReflectionProbe-1.ktx2",
+            "fallbackExt": "png",
+            "fallbackPath": "HighResTextures/ReflectionProbe-1.png"
+        },
+        {
+            "name": "TireMarks2",
+            "ext": "jpg",
+            "path": "HighResTextures/TireMarks2.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "asphalt_d",
+            "ext": "jpg",
+            "path": "HighResTextures/asphalt_d.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "carbonfiber",
+            "ext": "jpg",
+            "path": "HighResTextures/carbonfiber.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "roughtex_normal",
+            "ext": "jpg",
+            "path": "HighResTextures/roughtex_normal.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "tarmac_normal",
+            "ext": "jpg",
+            "path": "HighResTextures/tarmac_normal.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "wheelstyle_color1",
+            "ext": "jpg",
+            "path": "HighResTextures/wheelstyle_color1.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "wheelstyle_color1E",
+            "ext": "jpg",
+            "path": "HighResTextures/wheelstyle_color1E.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "wheelstyle_color1F",
+            "ext": "jpg",
+            "path": "HighResTextures/wheelstyle_color1F.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Balls",
+            "ext": "jpg",
+            "path": "MapIcons/Balls.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Buildings",
+            "ext": "jpg",
+            "path": "MapIcons/Buildings.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Bumps",
+            "ext": "jpg",
+            "path": "MapIcons/Bumps.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Buses",
+            "ext": "jpg",
+            "path": "MapIcons/Buses.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Containers",
+            "ext": "jpg",
+            "path": "MapIcons/Containers.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Curve",
+            "ext": "jpg",
+            "path": "MapIcons/Curve.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Descent",
+            "ext": "jpg",
+            "path": "MapIcons/Descent.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Gates",
+            "ext": "jpg",
+            "path": "MapIcons/Gates.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Height",
+            "ext": "jpg",
+            "path": "MapIcons/Height.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Hills",
+            "ext": "jpg",
+            "path": "MapIcons/Hills.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Holes",
+            "ext": "jpg",
+            "path": "MapIcons/Holes.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "LongHoles",
+            "ext": "jpg",
+            "path": "MapIcons/LongHoles.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "LongJump",
+            "ext": "jpg",
+            "path": "MapIcons/LongJump.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Maneuvers",
+            "ext": "jpg",
+            "path": "MapIcons/Maneuvers.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Press",
+            "ext": "jpg",
+            "path": "MapIcons/Press.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "RacingTrack",
+            "ext": "jpg",
+            "path": "MapIcons/RacingTrack.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Spikes",
+            "ext": "jpg",
+            "path": "MapIcons/Spikes.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Squeeze",
+            "ext": "jpg",
+            "path": "MapIcons/Squeeze.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Start",
+            "ext": "jpg",
+            "path": "MapIcons/Start.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Tight",
+            "ext": "jpg",
+            "path": "MapIcons/Tight.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Trains",
+            "ext": "jpg",
+            "path": "MapIcons/Trains.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "TurnLeft",
+            "ext": "jpg",
+            "path": "MapIcons/TurnLeft.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "TwoJumps",
+            "ext": "jpg",
+            "path": "MapIcons/TwoJumps.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "VeryLongJump",
+            "ext": "jpg",
+            "path": "MapIcons/VeryLongJump.jpg",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.1.1.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.1.1.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.1.10.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.1.10.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.1.11.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.1.11.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.1.12.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.1.12.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.1.14.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.1.14.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.1.2.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.1.2.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.1.3.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.1.3.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.1.4.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.1.4.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.1.5.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.1.5.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.1.6.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.1.6.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.1.7.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.1.7.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.1.8.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.1.8.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.1.9.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.1.9.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.2.15.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.2.15.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.2.16.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.2.16.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.2.17.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.2.17.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.2.18.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.2.18.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.2.19.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.2.19.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.2.20.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.2.20.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.2.21.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.2.21.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.2.22.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.2.22.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.2.23.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.2.23.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.20.0.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.20.0.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.25.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.25.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.26.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.26.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.28.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.28.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.29.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.29.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.30.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.30.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.31.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.31.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.32.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.32.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.33.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.33.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.34.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.34.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.35.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.35.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.36.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.36.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.37.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.37.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.38.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.38.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.39.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.39.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.40.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.40.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.41.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.41.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "Map.3.42.RacingTrack",
+            "ext": "png",
+            "path": "MapTrajectories/Map.3.42.RacingTrack.png",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-1-A",
+            "ext": "glb",
+            "path": "glb/C-1-1-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-1-B",
+            "ext": "glb",
+            "path": "glb/C-1-1-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-1-C",
+            "ext": "glb",
+            "path": "glb/C-1-1-C.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-1-D",
+            "ext": "glb",
+            "path": "glb/C-1-1-D.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-1-E",
+            "ext": "glb",
+            "path": "glb/C-1-1-E.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-1-S",
+            "ext": "glb",
+            "path": "glb/C-1-1-S.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-1-ST-B",
+            "ext": "glb",
+            "path": "glb/C-1-1-ST-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-1-ST",
+            "ext": "glb",
+            "path": "glb/C-1-1-ST.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-1-T",
+            "ext": "glb",
+            "path": "glb/C-1-1-T.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-2-A",
+            "ext": "glb",
+            "path": "glb/C-1-2-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-2-A2",
+            "ext": "glb",
+            "path": "glb/C-1-2-A2.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-2-A3",
+            "ext": "glb",
+            "path": "glb/C-1-2-A3.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-2-B",
+            "ext": "glb",
+            "path": "glb/C-1-2-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-2-T",
+            "ext": "glb",
+            "path": "glb/C-1-2-T.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-3-A",
+            "ext": "glb",
+            "path": "glb/C-1-3-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-3-B",
+            "ext": "glb",
+            "path": "glb/C-1-3-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-1-3-S2",
+            "ext": "glb",
+            "path": "glb/C-1-3-S2.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-2-1-A",
+            "ext": "glb",
+            "path": "glb/C-2-1-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-2-1-A2",
+            "ext": "glb",
+            "path": "glb/C-2-1-A2.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-2-1-B",
+            "ext": "glb",
+            "path": "glb/C-2-1-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-2-1-T",
+            "ext": "glb",
+            "path": "glb/C-2-1-T.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-2-2-A",
+            "ext": "glb",
+            "path": "glb/C-2-2-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-2-2-A2",
+            "ext": "glb",
+            "path": "glb/C-2-2-A2.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-2-2-B",
+            "ext": "glb",
+            "path": "glb/C-2-2-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-2-2-P",
+            "ext": "glb",
+            "path": "glb/C-2-2-P.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-2-2-P2",
+            "ext": "glb",
+            "path": "glb/C-2-2-P2.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-2-3-A",
+            "ext": "glb",
+            "path": "glb/C-2-3-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-2-3-S",
+            "ext": "glb",
+            "path": "glb/C-2-3-S.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-2-3-T",
+            "ext": "glb",
+            "path": "glb/C-2-3-T.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-3-1-A",
+            "ext": "glb",
+            "path": "glb/C-3-1-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-3-1-B",
+            "ext": "glb",
+            "path": "glb/C-3-1-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-3-1-S2",
+            "ext": "glb",
+            "path": "glb/C-3-1-S2.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-3-2-A",
+            "ext": "glb",
+            "path": "glb/C-3-2-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-3-2-S",
+            "ext": "glb",
+            "path": "glb/C-3-2-S.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-3-2-T",
+            "ext": "glb",
+            "path": "glb/C-3-2-T.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-3-3-A",
+            "ext": "glb",
+            "path": "glb/C-3-3-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-3-3-B",
+            "ext": "glb",
+            "path": "glb/C-3-3-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-3-3-p",
+            "ext": "glb",
+            "path": "glb/C-3-3-p.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "C-3-3-p2",
+            "ext": "glb",
+            "path": "glb/C-3-3-p2.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-1-1-A",
+            "ext": "glb",
+            "path": "glb/DC-1-1-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-1-1-B",
+            "ext": "glb",
+            "path": "glb/DC-1-1-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-1-1-C",
+            "ext": "glb",
+            "path": "glb/DC-1-1-C.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-1-1-D",
+            "ext": "glb",
+            "path": "glb/DC-1-1-D.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-1-1-E",
+            "ext": "glb",
+            "path": "glb/DC-1-1-E.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-1-1-F",
+            "ext": "glb",
+            "path": "glb/DC-1-1-F.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-1-1-G",
+            "ext": "glb",
+            "path": "glb/DC-1-1-G.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-1-1-H",
+            "ext": "glb",
+            "path": "glb/DC-1-1-H.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-1-2-A",
+            "ext": "glb",
+            "path": "glb/DC-1-2-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-1-2-B",
+            "ext": "glb",
+            "path": "glb/DC-1-2-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-1-2-C",
+            "ext": "glb",
+            "path": "glb/DC-1-2-C.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-1-2-D",
+            "ext": "glb",
+            "path": "glb/DC-1-2-D.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-1-2-E",
+            "ext": "glb",
+            "path": "glb/DC-1-2-E.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-1-2-F",
+            "ext": "glb",
+            "path": "glb/DC-1-2-F.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-1-2-G",
+            "ext": "glb",
+            "path": "glb/DC-1-2-G.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-2-A",
+            "ext": "glb",
+            "path": "glb/DC-2-2-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-2-B",
+            "ext": "glb",
+            "path": "glb/DC-2-2-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-2-C",
+            "ext": "glb",
+            "path": "glb/DC-2-2-C.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-2-D",
+            "ext": "glb",
+            "path": "glb/DC-2-2-D.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-2-F",
+            "ext": "glb",
+            "path": "glb/DC-2-2-F.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-2-G",
+            "ext": "glb",
+            "path": "glb/DC-2-2-G.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-2-H",
+            "ext": "glb",
+            "path": "glb/DC-2-2-H.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-2-I",
+            "ext": "glb",
+            "path": "glb/DC-2-2-I.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-2-J",
+            "ext": "glb",
+            "path": "glb/DC-2-2-J.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-2-L",
+            "ext": "glb",
+            "path": "glb/DC-2-2-L.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-2-M",
+            "ext": "glb",
+            "path": "glb/DC-2-2-M.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-2-N",
+            "ext": "glb",
+            "path": "glb/DC-2-2-N.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-2-O",
+            "ext": "glb",
+            "path": "glb/DC-2-2-O.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-2-P",
+            "ext": "glb",
+            "path": "glb/DC-2-2-P.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-2-Q",
+            "ext": "glb",
+            "path": "glb/DC-2-2-Q.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-2-R",
+            "ext": "glb",
+            "path": "glb/DC-2-2-R.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-3-A",
+            "ext": "glb",
+            "path": "glb/DC-2-3-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-3-B",
+            "ext": "glb",
+            "path": "glb/DC-2-3-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-3-C",
+            "ext": "glb",
+            "path": "glb/DC-2-3-C.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-3-D",
+            "ext": "glb",
+            "path": "glb/DC-2-3-D.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-3-E",
+            "ext": "glb",
+            "path": "glb/DC-2-3-E.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-3-F",
+            "ext": "glb",
+            "path": "glb/DC-2-3-F.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-3-G",
+            "ext": "glb",
+            "path": "glb/DC-2-3-G.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-3-H",
+            "ext": "glb",
+            "path": "glb/DC-2-3-H.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-3-I",
+            "ext": "glb",
+            "path": "glb/DC-2-3-I.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-3-J",
+            "ext": "glb",
+            "path": "glb/DC-2-3-J.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-2-3-K",
+            "ext": "glb",
+            "path": "glb/DC-2-3-K.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-3-3-A",
+            "ext": "glb",
+            "path": "glb/DC-3-3-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-3-3-B",
+            "ext": "glb",
+            "path": "glb/DC-3-3-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-3-3-C",
+            "ext": "glb",
+            "path": "glb/DC-3-3-C.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-3-3-D",
+            "ext": "glb",
+            "path": "glb/DC-3-3-D.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-3-3-E",
+            "ext": "glb",
+            "path": "glb/DC-3-3-E.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-3-3-F",
+            "ext": "glb",
+            "path": "glb/DC-3-3-F.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-3-3-G",
+            "ext": "glb",
+            "path": "glb/DC-3-3-G.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-3-3-H",
+            "ext": "glb",
+            "path": "glb/DC-3-3-H.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "DC-3-3-S",
+            "ext": "glb",
+            "path": "glb/DC-3-3-S.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GRID-R-A",
+            "ext": "glb",
+            "path": "glb/GRID-R-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GRID-R-B",
+            "ext": "glb",
+            "path": "glb/GRID-R-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GRID-R-C",
+            "ext": "glb",
+            "path": "glb/GRID-R-C.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GRID-R-D",
+            "ext": "glb",
+            "path": "glb/GRID-R-D.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GRID-R-E",
+            "ext": "glb",
+            "path": "glb/GRID-R-E.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "GRID-R-F",
+            "ext": "glb",
+            "path": "glb/GRID-R-F.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "R-1-2-A",
+            "ext": "glb",
+            "path": "glb/R-1-2-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "R-1-2-B",
+            "ext": "glb",
+            "path": "glb/R-1-2-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "R-1-3-A",
+            "ext": "glb",
+            "path": "glb/R-1-3-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "R-1-3-B",
+            "ext": "glb",
+            "path": "glb/R-1-3-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "R-1-3-S",
+            "ext": "glb",
+            "path": "glb/R-1-3-S.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "R-2-1-A",
+            "ext": "glb",
+            "path": "glb/R-2-1-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "R-2-2-A",
+            "ext": "glb",
+            "path": "glb/R-2-2-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "R-2-2-B",
+            "ext": "glb",
+            "path": "glb/R-2-2-B.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "R-3-1-A",
+            "ext": "glb",
+            "path": "glb/R-3-1-A.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        },
+        {
+            "name": "R-3-1-S",
+            "ext": "glb",
+            "path": "glb/R-3-1-S.glb",
+            "fallbackExt": "",
+            "fallbackPath": ""
+        }
+    ]
+}

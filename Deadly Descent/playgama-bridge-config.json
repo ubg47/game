@@ -1,0 +1,335 @@
+
+{
+    "$schema" : "https://bridge.playgama.com/v1/stable/schema.json",
+    "disableLoadingLogo" : true,
+    "advertisement"      : {
+        "interstitial" : {
+            "preloadOnStart" : true
+        },
+        "rewarded"     : {
+            "preloadOnStart" : true
+        },
+        "useBuiltInErrorPopup" : true,
+        "backfillId"           : ""
+    },
+    "payments"           : [
+        {
+            "id" : "coinPack0_2",
+            "yandex" : {
+                "id" : "coinPack0_2"
+            },
+            "crazy_games" : {
+                "id" : "coinPack0_2"
+            },
+            "facebook"    : {
+                "productID" : "coinPack0_2"
+            },
+            "msn"         : {
+                "productId" : "coinPack0_2"
+            },
+            "playgama"    : {
+                "amount" : 10
+            },
+            "qa_tool"     : {
+                "id" : "coinPack0_2",
+                "amount" : 10
+            },
+            "playdeck"    : {
+                "amount" : 10,
+                "description" : "COINPACK0_2"
+            }
+        },
+        {
+            "id" : "coinPack1_2",
+            "yandex" : {
+                "id" : "coinPack1_2"
+            },
+            "crazy_games" : {
+                "id" : "coinPack1_2"
+            },
+            "facebook"    : {
+                "productID" : "coinPack1_2"
+            },
+            "msn"         : {
+                "productId" : "coinPack1_2"
+            },
+            "playgama"    : {
+                "amount" : 18
+            },
+            "qa_tool"     : {
+                "id" : "coinPack1_2",
+                "amount" : 18
+            },
+            "playdeck"    : {
+                "amount" : 18,
+                "description" : "COINPACK1_2"
+            }
+        },
+        {
+            "id" : "coinPack2_2",
+            "yandex" : {
+                "id" : "coinPack2_2"
+            },
+            "crazy_games" : {
+                "id" : "coinPack2_2"
+            },
+            "facebook"    : {
+                "productID" : "coinPack2_2"
+            },
+            "msn"         : {
+                "productId" : "coinPack2_2"
+            },
+            "playgama"    : {
+                "amount" : 29
+            },
+            "qa_tool"     : {
+                "id" : "coinPack2_2",
+                "amount" : 29
+            },
+            "playdeck"    : {
+                "amount" : 29,
+                "description" : "COINPACK2_2"
+            }
+        },
+        {
+            "id" : "coinPack3_2",
+            "yandex" : {
+                "id" : "coinPack3_2"
+            },
+            "crazy_games" : {
+                "id" : "coinPack3_2"
+            },
+            "facebook"    : {
+                "productID" : "coinPack3_2"
+            },
+            "msn"         : {
+                "productId" : "coinPack3_2"
+            },
+            "playgama"    : {
+                "amount" : 59
+            },
+            "qa_tool"     : {
+                "id" : "coinPack3_2",
+                "amount" : 59
+            },
+            "playdeck"    : {
+                "amount" : 59,
+                "description" : "COINPACK3_2"
+            }
+        },
+        {
+            "id" : "coinPack0",
+            "yandex" : {
+                "id" : "coinPack0"
+            },
+            "crazy_games" : {
+                "id" : "coinPack0"
+            },
+            "facebook"    : {
+                "productID" : "coinPack0"
+            },
+            "msn"         : {
+                "productId" : "coinPack0"
+            },
+            "playgama"    : {
+                "amount" : 0
+            },
+            "qa_tool"     : {
+                "id" : "coinPack0",
+                "amount" : 0
+            },
+            "playdeck"    : {
+                "amount" : 0,
+                "description" : "COINPACK0"
+            }
+        },
+        {
+            "id" : "coinPack1",
+            "yandex" : {
+                "id" : "coinPack1"
+            },
+            "crazy_games" : {
+                "id" : "coinPack1"
+            },
+            "facebook"    : {
+                "productID" : "coinPack1"
+            },
+            "msn"         : {
+                "productId" : "coinPack1"
+            },
+            "playgama"    : {
+                "amount" : 0
+            },
+            "qa_tool"     : {
+                "id" : "coinPack1",
+                "amount" : 0
+            },
+            "playdeck"    : {
+                "amount" : 0,
+                "description" : "COINPACK1"
+            }
+        },
+        {
+            "id" : "coinPack2",
+            "yandex" : {
+                "id" : "coinPack2"
+            },
+            "crazy_games" : {
+                "id" : "coinPack2"
+            },
+            "facebook"    : {
+                "productID" : "coinPack2"
+            },
+            "msn"         : {
+                "productId" : "coinPack2"
+            },
+            "playgama"    : {
+                "amount" : 0
+            },
+            "qa_tool"     : {
+                "id" : "coinPack2",
+                "amount" : 0
+            },
+            "playdeck"    : {
+                "amount" : 0,
+                "description" : "COINPACK2"
+            }
+        },
+        {
+            "id" : "coinPack3",
+            "yandex" : {
+                "id" : "coinPack3"
+            },
+            "crazy_games" : {
+                "id" : "coinPack3"
+            },
+            "facebook"    : {
+                "productID" : "coinPack3"
+            },
+            "msn"         : {
+                "productId" : "coinPack3"
+            },
+            "playgama"    : {
+                "amount" : 0
+            },
+            "qa_tool"     : {
+                "id" : "coinPack3",
+                "amount" : 0
+            },
+            "playdeck"    : {
+                "amount" : 0,
+                "description" : "COINPACK3"
+            }
+        },
+        {
+            "id" : "no_ads",
+            "yandex" : {
+                "id" : "no_ads"
+            },
+            "crazy_games" : {
+                "id" : "no_ads"
+            },
+            "facebook"    : {
+                "productID" : "no_ads"
+            },
+            "msn"         : {
+                "productId" : "no_ads"
+            },
+            "playgama"    : {
+                "amount" : 9
+            },
+            "qa_tool"     : {
+                "id" : "no_ads",
+                "amount" : 9
+            },
+            "playdeck"    : {
+                "amount" : 9,
+                "description" : "NO_ADS"
+            }
+        },
+        {
+            "id" : "arion8",
+            "yandex" : {
+                "id" : "arion8"
+            },
+            "crazy_games" : {
+                "id" : "arion8"
+            },
+            "facebook"    : {
+                "productID" : "arion8"
+            },
+            "msn"         : {
+                "productId" : "arion8"
+            },
+            "playgama"    : {
+                "amount" : 29
+            },
+            "qa_tool"     : {
+                "id" : "arion8",
+                "amount" : 29
+            },
+            "playdeck"    : {
+                "amount" : 29,
+                "description" : "ARION8"
+            }
+        },
+        {
+            "id" : "pulse",
+            "yandex" : {
+                "id" : "pulse"
+            },
+            "crazy_games" : {
+                "id" : "pulse"
+            },
+            "facebook"    : {
+                "productID" : "pulse"
+            },
+            "msn"         : {
+                "productId" : "pulse"
+            },
+            "playgama"    : {
+                "amount" : 49
+            },
+            "qa_tool"     : {
+                "id" : "pulse",
+                "amount" : 49
+            },
+            "playdeck"    : {
+                "amount" : 49,
+                "description" : "PULSE"
+            }
+        },
+        {
+            "id" : "aurora",
+            "yandex" : {
+                "id" : "aurora"
+            },
+            "crazy_games" : {
+                "id" : "aurora"
+            },
+            "facebook"    : {
+                "productID" : "aurora"
+            },
+            "msn"         : {
+                "productId" : "aurora"
+            },
+            "playgama"    : {
+                "amount" : 59
+            },
+            "qa_tool"     : {
+                "id" : "aurora",
+                "amount" : 59
+            },
+            "playdeck"    : {
+                "amount" : 59,
+                "description" : "AURORA"
+            }
+        }
+    ],
+    "leaderboards"       : [
+    ],
+    "sendAnalyticsEvents" : true,
+    "platforms"           : {
+    },
+    "forciblySetPlatformId" : "yandex"
+}
